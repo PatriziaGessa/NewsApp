@@ -24,8 +24,15 @@ public class SettingsActivity extends AppCompatActivity {
             super.onCreate(savedInstanceState);
             addPreferencesFromResource(R.xml.settings_main);
 
-            Preference keyword = findPreference(getString(R.string.settings_keyword_key));
-            bindPreferenceSummaryToValue(keyword);
+            // Find the preference for number of items
+            Preference numOfItems = findPreference(getString(R.string.settings_number_of_items_key));
+            // bind the current preference value to be displayed
+            bindPreferenceSummaryToValue(numOfItems);
+
+            // Find the "order by" Preference object according to its key
+            Preference orderBy = findPreference(getString(R.string.settings_order_by_key));
+            // Update the summary so that it displays the current value stored in SharedPreferences
+            bindPreferenceSummaryToValue(orderBy);
         }
 
 
