@@ -29,9 +29,6 @@ import java.util.List;
 
 
 public class MainActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<List<News>> {
-
-    // The tag for log messages.
-    //public static final String LOG_TAG = MainActivity.class.getName();
     /**
      * URL for earthquake data from The Guardian API
      */
@@ -129,15 +126,12 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     public Loader<List<News>> onCreateLoader(int i, Bundle bundle) {
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
 
-        // getString retrieves a String value from the preferences.
-        // The second parameter is the default value for this preference.
-
+        // getString retrieves a String value from the preferences
+        // the second parameter is the default value for this preference.
         String numbOfItems = sharedPrefs.getString(
                 getString(R.string.settings_number_of_items_key),
                 getString(R.string.settings_number_of_items_default));
 
-
-        String keyword = sharedPrefs.getString(getString(R.string.settings_keyword_key), getString(R.string.settings_keyword_default));
 
         String orderBy = sharedPrefs.getString(
                 getString(R.string.settings_order_by_key),
@@ -151,7 +145,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         Uri.Builder uriBuilder = baseUri.buildUpon();
 
         // Append query parameter and its value. For example, the `format=json`
-        //uriBuilder.appendQueryParameter(Constants.QUERY_PARAM, "");
+        uriBuilder.appendQueryParameter(Constants.QUERY_PARAM, "");
         uriBuilder.appendQueryParameter(Constants.API_KEY_PARAM, Constants.API_KEY);
         uriBuilder.appendQueryParameter(Constants.ORDER_BY_PARAM, orderBy);
         uriBuilder.appendQueryParameter(Constants.PAGE_SIZE_PARAM, numbOfItems);

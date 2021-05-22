@@ -48,7 +48,7 @@ public class QueryUtils {
         try {
             jsonResponse = makeHttpRequest(url);
         } catch (IOException e) {
-            Log.e(LOG_TAG, "Problem making the HTTP request.", e);
+            Log.e(LOG_TAG, "Problem making the HTTP request!", e);
         }
 
 
@@ -65,7 +65,7 @@ public class QueryUtils {
         try {
             url = new URL(requestUrl);
         } catch (MalformedURLException e) {
-            Log.e(LOG_TAG, "Problem building the URL.", e);
+            Log.e(LOG_TAG, "Problem building the URL!", e);
         }
         return url;
     }
@@ -100,7 +100,7 @@ public class QueryUtils {
                 Log.e(LOG_TAG, "Error response code: " + urlConnection.getResponseCode());
             }
         } catch (IOException e) {
-            Log.e(LOG_TAG, "Problem retrieving the news JSON results.", e);
+            Log.e(LOG_TAG, "Problem retrieving the news JSON results!", e);
         } finally {
             if (urlConnection != null) {
                 urlConnection.disconnect();
@@ -145,7 +145,7 @@ public class QueryUtils {
         try {
             return doParse(json);
         } catch (JSONException e) {
-            Log.e("QueryUtils", "Problem parsing the news JSON results", e);
+            Log.e("QueryUtils", "Problem parsing the news JSON results!", e);
             return Collections.emptyList();
 
         }
@@ -176,11 +176,15 @@ public class QueryUtils {
             // Extract the value for the key called "webTitle"
             String webTitle = currentNews.getString(Constants.JSON_KEY_WEB_TITLE);
 
+
+            // Extract the value for the key called "webPublicationDate"
+            String webPublicationDate = currentNews.getString(Constants.JSON_KEY_WEB_PUBLICATION_DATE);
+
             // Extract the value for the key called "webUrl"
             String webUrl = currentNews.getString(Constants.JSON_KEY_WEB_URL);
 
 
-            myNews.add(new News(sectionName, webTitle, webUrl));
+            myNews.add(new News(sectionName, webTitle, webPublicationDate, webUrl));
 
 
         }

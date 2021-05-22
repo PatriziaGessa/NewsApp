@@ -34,7 +34,7 @@ public class Constants {
     /**
      * API Key
      */
-    public static final String API_KEY = "abf8fdd5-a152-4471-935d-ea03cbc2a30b";
+    public static final String API_KEY = "test";
     /**
      * Default number to set the image on the top of the textView
      */
