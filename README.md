@@ -3,7 +3,7 @@
 
 
 # Project Overview
-A news feed app to display regularly updated news from the internet using [Guardian API](https://open-platform.theguardian.com/documentation/). This is API which returns information in a JSON format.
+A news feed app to display regularly updated news from the internet using [Guardian API](https://open-platform.theguardian.com/documentation/). This API which returns information in a JSON format.
 
 
 # Design & functionality include
