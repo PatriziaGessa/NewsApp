@@ -3,15 +3,14 @@
 
 
 # Project Overview
-An app to display recent news stories using [Guardian API](https://open-platform.theguardian.com/documentation/)
+A news feed app to display regularly updated news from the internet using [Guardian API](https://open-platform.theguardian.com/documentation/). This is API which returns information in a JSON format.
 
 
-# What will I learn?
-This project is about combining various ideas and skills we’ve been practicing throughout the course. They include:
+# Design & functionality include
 
-- Connecting to an API
+- Connecting to Guardian API
 - Parsing the JSON response
-- Handling error cases gracefully
+- Error handling
 - Updating information regularly
 - Using an AsyncTask
 - Doing network operations independent of the Activity lifecycle
