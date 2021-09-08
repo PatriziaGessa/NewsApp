@@ -2,6 +2,7 @@ package com.example.android.newsapp.utils;
 
 public class Constants {
 
+
     /**
      * URL for news data from the guardian data set
      */
